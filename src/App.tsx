@@ -24,6 +24,8 @@ const App = () => {
 <Route element={<Addtask/>} path='/Add-task'/>
 
 
+<Route path='/form' element={<Form/>}/>
+
       </Routes>
     </div>
   )

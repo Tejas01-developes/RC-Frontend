@@ -59,7 +59,9 @@ const getevents=async(activetoken)=>{
 }
 
 
-
+const navigateformfilling=()=>{
+  return  navigate("/form")
+}
 
 
 
@@ -74,6 +76,7 @@ const getevents=async(activetoken)=>{
     {i.title} <br />
     {i.description} <br />
     {i.eventdata}
+    <button onClick={navigateformfilling}>Register Slot</button>
 </div>
     )) : <p>No Event</p>}
 </div>

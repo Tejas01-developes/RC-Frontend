@@ -49,12 +49,12 @@ const authcheck=async(activetoken:string)=>{
     }else{
        
          alert("No authorization")
-         return   navigate("/")
+         return   navigate("/home")
     }
 }catch(err){
     console.log(err)
      alert("No authorization");
-    return   navigate("/")
+    return   navigate("/home")
 }
 }
 
