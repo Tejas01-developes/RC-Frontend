@@ -37,17 +37,17 @@ try{
         })
         }
   return (
-    <div>
+    <div className='parentdiv'>
 
-    <div>
+    <div className='heading'>
         <h1>Login Member</h1>
     </div>
     
     <div>
-    <input type="text" placeholder='Email' name='email' value={field.email} onChange={handlefield} />
-    <input type="password" placeholder='Password' name='password' value={field.password} onChange={handlefield} />
-    <div>
-    <button onClick={loginuser}>Login</button>
+    <input type="text" placeholder='Email' name='email' value={field.email} onChange={handlefield} className='fields' />
+    <input type="password" placeholder='Password' name='password' value={field.password} onChange={handlefield} className='fields' />
+    <div className='buttondiv'>
+    <button onClick={loginuser} >Login</button>
     </div>
     </div>
     

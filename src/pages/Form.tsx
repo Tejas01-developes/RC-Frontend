@@ -71,20 +71,21 @@ return alert("Form filling failed")
 
 
   return (
-    <div>
+    <div className='parentdiv'>
 
-    <div>
+    <div className='heading'>
         <h1>Event form</h1>
     </div>
     
     <div>
-    <input type="text" placeholder='Name' name='name' value={field.name} onChange={handlefield}/>
-    <input type="text" placeholder='Email' name='email' value={field.email} onChange={handlefield} />
-    <input type="text" placeholder='Phone.No' name='phone' value={field.phone} onChange={handlefield} />
-    <input type="checkbox" name='condition' id='condition' checked={field.condition} onChange={handlefield} />
+    <input type="text" placeholder='Name' name='name' value={field.name} onChange={handlefield} className='fields'/>
+    <input type="text" placeholder='Email' name='email' value={field.email} onChange={handlefield} className='fields' />
+    <input type="text" placeholder='Phone.No' name='phone' value={field.phone} onChange={handlefield} className='fields' />
+    <div className='checkbox-container'>
+    <input type="checkbox" name='condition' id='condition' checked={field.condition} onChange={handlefield} className='fields' />
     <label htmlFor="condition" >i conforms that i am fit to participate in this event and all the responsibilities of this participation is on me</label>
-    
-    <div>
+    </div>
+    <div className='buttondiv'>
     <button onClick={handleformfilling}>Register Slot</button>
     </div>
     </div>

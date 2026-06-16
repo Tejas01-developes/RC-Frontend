@@ -92,19 +92,18 @@ authcheck(activetoken)
         })
         }
   return (
-    <div>
+    <div className='parentdiv'>
 
-    <div>
+    <div className='heading'>
         <h1>Add Event</h1>
     </div>
     
     <div>
-    <input type="text" placeholder='Title' name='title' value={field.title} onChange={handlefield}/>
-    <textarea  placeholder='Description' name='description' value={field.description} onChange={handlefield} />
-   <input type="date"  name='eventdate' value={field.eventdate} onChange={handlefield}/>
-    <div>
+    <input type="text" placeholder='Title' name='title' value={field.title} onChange={handlefield} className='fields'/>
+    <textarea  placeholder='Description' name='description' value={field.description} onChange={handlefield} className='fields' />
+   <input type="date"  name='eventdate' value={field.eventdate} onChange={handlefield} className='fields'/>
+    <div className='buttondiv'>
     <button onClick={addtask}>Add task</button>
-    <h1>{token}</h1>
     </div>
     </div>
     
