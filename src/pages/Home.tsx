@@ -7,6 +7,7 @@ const Home = () => {
     const[loading,setloading]=useState(true)
     const{setaccess,getaccess}=useContext(Authcontext)
     const[events,setevents]=useState([])
+    const[count,setcount]=useState()
     const navigate=useNavigate()
     const token=getaccess()
 
@@ -41,6 +42,7 @@ const activetoken=getaccess()
 useEffect(()=>{
 if(activetoken){
     getevents(activetoken)
+    getmembercount(activetoken)
 }
 },[activetoken])
 
@@ -62,6 +64,20 @@ const getevents=async(activetoken)=>{
 const navigateformfilling=()=>{
   return  navigate("/form")
 }
+
+
+const getmembercount=async(activetoken:string)=>{
+try{
+  const res=await axios.get("http://localhost:3000/apis/count",{headers:{Authorization:`Bearer ${activetoken}`}})
+  if(res.data.success){
+    return setcount(res.data.finalcount.maxcount)
+  }
+  return alert("members count failed")
+}catch(err){
+  return alert("count failed")
+}
+}
+
 
 
 
@@ -95,6 +111,7 @@ const navigateformfilling=()=>{
                   <h2>{i.title}</h2>
                   <p className="event-desc">{i.description}</p>
                   <span className="event-date">📅 {i.eventdata}</span>
+                  <h3 className='count'>Registered user :- {count ? count : 0}/50</h3>
                 </div>
                 
                 <div className="buttondiv">

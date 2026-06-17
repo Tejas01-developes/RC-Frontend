@@ -25,7 +25,9 @@ alert("Registration failed")
   }
 }
 
-
+const loginnavigate=()=>{
+return navigate("/")
+}
 
 const handlefield=(e)=>{
 setfield({
@@ -47,6 +49,7 @@ setfield({
 </div>
 <div className='buttondiv'>
 <button onClick={register}>Register</button>
+<button onClick={loginnavigate}>Login button</button>
 </div>
 
     </div>

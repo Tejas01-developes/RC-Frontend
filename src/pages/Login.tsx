@@ -27,6 +27,9 @@ try{
 }
 }
 
+const newaccountnavigate=()=>{
+    return navigate("/register")
+}
 
 
 
@@ -48,6 +51,7 @@ try{
     <input type="password" placeholder='Password' name='password' value={field.password} onChange={handlefield} className='fields' />
     <div className='buttondiv'>
     <button onClick={loginuser} >Login</button>
+    <button onClick={newaccountnavigate}>New Account</button>
     </div>
     </div>
     
