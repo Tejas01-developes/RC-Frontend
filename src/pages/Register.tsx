@@ -39,7 +39,7 @@ setfield({
     <div className='parentdiv'>
 
 <div className='heading'>
-    <h1>Login Member</h1>
+    <h1>Register Member</h1>
 </div>
 
 <div>
@@ -50,6 +50,7 @@ setfield({
 <div className='buttondiv'>
 <button onClick={register}>Register</button>
 <button onClick={loginnavigate}>Login button</button>
+
 </div>
 
     </div>
