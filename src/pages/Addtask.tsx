@@ -92,21 +92,24 @@ authcheck(activetoken)
         })
         }
   return (
-    <div className='parentdiv'>
-
+    <div className='page-wrapper'>
+<header className='brand-header'>
+<div className='brand-title'>Run Club</div>
+</header>
+<main className='parentdiv'>
     <div className='heading'>
         <h1>Add Event</h1>
     </div>
     
-    <div>
+    <div className='form-body'>
     <input type="text" placeholder='Title' name='title' value={field.title} onChange={handlefield} className='fields'/>
     <textarea  placeholder='Description' name='description' value={field.description} onChange={handlefield} className='fields' />
    <input type="date"  name='eventdate' value={field.eventdate} onChange={handlefield} className='fields'/>
     <div className='buttondiv'>
-    <button onClick={addtask}>Add task</button>
+    <button onClick={addtask} className='btn-primary-orange'>Add task</button>
     </div>
     </div>
-    
+    </main>
         </div>
   )
 }
