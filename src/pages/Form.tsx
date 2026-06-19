@@ -71,25 +71,28 @@ return alert("Form filling failed")
 
 
   return (
-    <div className='parentdiv'>
-
+    <div className='page-wrapper'>
+        <header className='brand-header'>
+<div className='brand-title'>Run Club</div>
+</header>
+<main className='parentdiv'>
     <div className='heading'>
         <h1>Event form</h1>
     </div>
     
-    <div>
+    <div className='form-body'>
     <input type="text" placeholder='Name' name='name' value={field.name} onChange={handlefield} className='fields'/>
     <input type="text" placeholder='Email' name='email' value={field.email} onChange={handlefield} className='fields' />
     <input type="text" placeholder='Phone.No' name='phone' value={field.phone} onChange={handlefield} className='fields' />
     <div className='checkbox-container'>
-    <input type="checkbox" name='condition' id='condition' checked={field.condition} onChange={handlefield} className='fields' />
-    <label htmlFor="condition" >i conforms that i am fit to participate in this event and all the responsibilities of this participation is on me</label>
+    <input type="checkbox" name='condition' id='condition' checked={field.condition} onChange={handlefield}  />
+    <label htmlFor="condition" className='condition'>I conforms that i am fit to participate in this event and all the responsibilities of this participation is on me</label>
     </div>
     <div className='buttondiv'>
-    <button onClick={handleformfilling}>Register Slot</button>
+    <button onClick={handleformfilling} className='btn-primary-orange' >Register Slot</button>
     </div>
     </div>
-    
+    </main>
         </div>
   )
 }

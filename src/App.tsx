@@ -4,12 +4,18 @@ import Login from './pages/Login';
 import Form from './pages/Form';
 import Addtask from './pages/Addtask';
 import Home from './pages/Home';
+import Payment from './pages/Payment';
+
 
 
 const App = () => {
   return (
     <div>
       <Routes>
+
+
+
+
 <Route path='/register' element={<Register/>}/>
 
 
@@ -25,6 +31,8 @@ const App = () => {
 
 
 <Route path='/form' element={<Form/>}/>
+
+<Route path='/pay' element={<Payment/>}/>
 
       </Routes>
     </div>

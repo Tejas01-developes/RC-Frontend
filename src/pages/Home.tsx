@@ -82,26 +82,20 @@ try{
 
 
   return (
-    <div className="parentdiv home-wrapper">
+    <div className=" page-wrapper">
+
+<header className='brand-header'>
+        <div className='brand-title'>Run Club</div>
+      </header>
+      <main className='home-main-container'>
     <div className="heading">
 <h1>Upcomming Event</h1>
     </div>
 
-
-{/* <div>
-    {events && events.length > 0 ? events.map((i,key)=>(
-<div key={key} >
-    {i.title} <br />
-    {i.description} <br />
-    {i.eventdata}
-    <button onClick={navigateformfilling}>Register Slot</button>
-</div>
-    )) : <p>No Event</p>}
-</div> */}
-
 {loading ? (
-        <p style={{ color: 'white', textAlign: 'center' }}>Loading events...</p>
+        <p className="loading-text" style={{ color: 'white', textAlign: 'center' }}>Loading events...</p>
       ) : (
+        <div className="home-wrapper">
         <div className="event-list">
           {events && events.length > 0 ? (
             events.map((i, key) => (
@@ -115,17 +109,18 @@ try{
                 </div>
                 
                 <div className="buttondiv">
-                  <button onClick={navigateformfilling}>Register Slot</button>
+                  <button onClick={navigateformfilling} className='btn-primary-orange'>Register Slot</button>
                 </div>
               </div>
             ))
           ) : (
             <p style={{ color: 'white', textAlign: 'center' }}>No events scheduled right now. Time to rest!</p>
           )}
+          </div>
         </div>
       )}
 
-
+      </main>
     </div>
   )
 }

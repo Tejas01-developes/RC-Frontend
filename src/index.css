@@ -1,236 +1,333 @@
-/* 1. The Global Background */
+/* 1. The Global Background & Wrapper */
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('https://media.istockphoto.com/id/911765014/vector/running-people.jpg?s=612x612&w=0&k=20&c=eV-99jWZUwd6IiTJzuwVgEViojArrh7HbBGkwHVxSdk=');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-  body {
-    /* 1. Reset margins so there are no white borders */
-    margin: 0;
-    padding: 0;
-    
-    /* 2. The Background Image */
-    /* background-image: url('https://thumbs.dreamstime.com/b/sports-running-people-rainbow-background-sports-running-people-rainbow-background-319202510.jpg'); */
+/* Ensure the wrapper covers the screen and centers the content */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Spreads header and form nicely if needed */
+  box-sizing: border-box;
+}
 
-    background-image: url('https://media.istockphoto.com/id/911765014/vector/running-people.jpg?s=612x612&w=0&k=20&c=eV-99jWZUwd6IiTJzuwVgEViojArrh7HbBGkwHVxSdk=');
-  
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat; /* Prevents the image from tiling */
-    background-attachment: fixed; /* Locks it to the viewport */
-    
-    /* 3. Centering the form */
-    min-height: 100vh; /* min-height is better than height for mobile */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+/* 2. Upgraded Brand Header */
+.brand-header {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  
-  /* 2. The Transparent 'Frosted Glass' Card */
-  .parentdiv {
-    background: rgba(15, 15, 15, 0.65); /* Dark semi-transparent tint */
-    backdrop-filter: blur(12px); /* This creates the frosted glass effect! */
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    border-radius: 16px;
-    width: 100%;
-    max-width: 420px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
-  }
-  
-  /* 3. Bold, Athletic Typography */
-  .heading h1 {
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 0;
-    margin-bottom: 30px;
-    text-align: center;
-    font-size: 28px;
-    font-weight: 800;
-    font-style: italic; /* Gives it a feeling of forward motion */
-  }
-  
-  /* 4. Sleek, Semi-transparent Inputs */
-  .fields {
-    width: 100%;
-    padding: 14px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    color: #ffffff;
-    font-size: 16px;
-    outline: none;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
-  }
-  
-  /* Make placeholder text visible against dark background */
-  .fields::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-  }
-  
-  /* Highlight the input with a bright color when the user clicks it */
-  .fields:focus {
-    border-color: #FF4500; /* Vibrant Run Club Orange */
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 8px rgba(255, 69, 0, 0.3);
-  }
-  
-  /* 5. High-Energy Action Button */
-  .buttondiv {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  
-  .buttondiv button {
-    width: 100%;
-    padding: 16px;
-    background-color: #FF4500; /* Vibrant Run Club Orange */
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-  }
-  
-  .buttondiv button:hover {
-    background-color: #E03E00; /* Slightly darker orange on hover */
-  }
-  
-  /* Press-down effect */
-  .buttondiv button:active {
-    transform: scale(0.98);
-  }
+.brand-title {
+  color: #FF4500; /* Vibrant Run Club Orange */
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  text-align: center;
+  font-style: italic;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Gives it depth against the background */
+  position: relative;
+}
 
-  /* Container to hold the checkbox and label side-by-side */
-.checkbox-container {
-    display: flex;
-    align-items: flex-start; /* Keeps the checkbox at the top if the text wraps to two lines */
-    gap: 12px; /* Space between the box and the text */
-    margin-bottom: 25px;
-    color: #ffffff;
-  }
-  
-  /* Style the label text */
-  .checkbox-container label {
-    font-size: 14px;
-    line-height: 1.5; /* Makes multi-line text easier to read */
-    cursor: pointer;
-    color: rgba(255, 255, 255, 0.9); /* Slightly soft white */
-  }
-  
-  /* Style the checkbox itself */
-  .checkbox-container input[type="checkbox"] {
-    margin: 0;
-    margin-top: 3px; /* Nudges the box down slightly to align with the text perfectly */
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-    accent-color: #FF4500; /* Colors the inside of the checkbox with your Run Club orange! */
-    flex-shrink: 0; /* Prevents the checkbox from squishing if the text gets really long */
-  }
+/* Accent line under the brand title for an athletic look */
+.brand-title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 4px;
+  background: #FF4500;
+  margin: 6px auto 0 auto;
+  border-radius: 2px;
+  transform: skewX(-15deg); /* Italicized accent line */
+}
+
+/* 3. Main Container Layout */
+.parentdiv {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 40px; /* Balances the top header space */
+}
+
+/* 4. The Transparent 'Frosted Glass' Card */
+.form-body {
+  background: rgba(15, 15, 15, 0.75); /* Deepened tint for better contrast */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+}
+
+/* 5. Bold, Athletic Typography inside Card */
+.heading h1 {
+  color: #FF4500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 800;
+  font-style: italic;
+}
 
 
 
 
 
 
+/* 6. Sleek, Semi-transparent Inputs */
+.fields {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.fields::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.fields:focus {
+  border-color: #FF4500;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 12px rgba(255, 69, 0, 0.4);
+}
+
+/* 7. Strategic Button Management */
+.buttondiv {
+  display: flex;
+  flex-direction: column; /* Stacks the two actions logically */
+  gap: 12px; 
+  margin-top: 10px;
+}
+
+/* Primary Action: Login */
+.buttondiv button:first-child {
+  width: 100%;
+  padding: 15px;
+  background-color: #FF4500;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
 
 
 
-/* --- Home Page Specific Additions --- */
 
-/* Make the glass panel wider for the Home page and allow scrolling if there are many events */
+
+.buttondiv button:first-child:hover {
+  background-color: #E03E00;
+}
+
+/* Secondary Action: New Account */
+.buttondiv button:last-child {
+  width: 100%;
+  padding: 12px;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.buttondiv button:last-child:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: #FF4500;
+}
+
+/* Global button press down action */
+.buttondiv button:active {
+  transform: scale(0.98);
+}
+.condition{
+  color: #ffffff;
+}
+
+
+/* Custom class to force the vibrant primary orange look */
+.buttondiv button.btn-primary-orange {
+  width: 100% !important;
+  padding: 15px !important;
+  background-color: #FF4500 !important; /* Vibrant Run Club Orange */
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  cursor: pointer !important;
+  display: block !important;
+  opacity: 1 !important;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.buttondiv button.btn-primary-orange:hover {
+  background-color: #E03E00 !important; /* Slightly darker orange on hover */
+}
+
+.buttondiv button.btn-primary-orange:active {
+  transform: scale(0.98) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Home */
+/* --- Global Overrides for Page Structuring --- */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.home-main-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* --- Upgraded Glass Panel List Box --- */
 .home-wrapper {
-    max-width: 600px; /* Wider than the 420px login form */
-    max-height: 85vh;
-    overflow-y: auto; /* Adds a scrollbar if the list gets too long */
-  }
-  
-  /* Customizing the scrollbar to match the dark glass theme */
-  .home-wrapper::-webkit-scrollbar {
-    width: 8px;
-  }
-  .home-wrapper::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-  }
-  .home-wrapper::-webkit-scrollbar-thumb {
-    background: rgba(255, 69, 0, 0.5); /* Semi-transparent Run Club Orange */
-    border-radius: 10px;
-  }
-  
-  /* The individual Event Cards */
-  .event-card {
-    background: rgba(255, 255, 255, 0.05); /* Very faint white background */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-  }
-  
-  /* Hover effect so they feel interactive */
-  .event-card:hover {
-    transform: translateY(-4px); /* Floats up slightly */
-    border-color: rgba(255, 69, 0, 0.6); /* Border glows orange */
-  }
-  
-  /* Event Typography */
-  .event-info h2 {
-    color: #ffffff;
-    margin: 0 0 8px 0;
-    font-size: 22px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  .event-info .event-desc {
-    color: rgba(255, 255, 255, 0.8);
-    margin: 0 0 12px 0;
-    font-size: 15px;
-    line-height: 1.5;
-  }
-  
-  .event-info .event-date {
-    display: inline-block;
-    background: rgba(255, 69, 0, 0.2);
-    color: #FF4500;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: bold;
-  }
+  background: rgba(15, 15, 15, 0.75); /* Matching dark glass background card */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px;
+  width: 100%;
+  max-width: 600px; /* Wider panel workspace for home contents */
+  max-height: 70vh; /* Prevents leaking off modern screen viewports */
+  overflow-y: auto; /* Handles endless rows cleanly with scroll mechanics */
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+}
 
-  .count{
-    color:#ffffff ;
-  }
+/* Customizing scrollbar track aesthetics to mirror orange theme styles */
+.home-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+.home-wrapper::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+}
+.home-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(255, 69, 0, 0.4);
+  border-radius: 10px;
+}
 
+/* Event List Card Grid Container */
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
+/* Individual Inline Items Nesting Inside Scroll Container */
+.event-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
 
+.event-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 69, 0, 0.5);
+}
 
+/* Event Context Alignments */
+.event-info h2 {
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
+.event-desc {
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
 
+.event-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
+.event-date {
+  display: inline-block;
+  background: rgba(255, 69, 0, 0.15);
+  color: #FF4500;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+.count {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  margin: 0;
+  font-weight: 600;
+}

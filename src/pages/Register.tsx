@@ -36,23 +36,28 @@ setfield({
 }
 
   return (
-    <div className='parentdiv'>
+    <div className='page-wrapper'>
 
+<header className='brand-header'>
+<div className='brand-title'>Run Club</div>
+</header>
+
+<main className='parentdiv'>
 <div className='heading'>
     <h1>Register Member</h1>
 </div>
 
-<div>
+<div className='form-body'>
 <input type="text" placeholder='Name' name='name' value={field.name} onChange={handlefield} className='fields'/>
 <input type="text" placeholder='Email' name='email' value={field.email} onChange={handlefield} className='fields' />
 <input type="password" placeholder='Password' name='password' value={field.password} onChange={handlefield} className='fields' />
-</div>
+
 <div className='buttondiv'>
 <button onClick={register}>Register</button>
 <button onClick={loginnavigate}>Login button</button>
-
 </div>
-
+</div>
+</main>
     </div>
   )
 }
