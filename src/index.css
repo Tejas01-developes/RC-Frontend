@@ -331,3 +331,19 @@ body {
   margin: 0;
   font-weight: 600;
 }
+
+.paybutton{
+  padding: 70px 70px;
+  border-radius: 20px;
+  background-color: #FF4500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paydiv{
+  margin-top: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

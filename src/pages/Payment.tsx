@@ -32,9 +32,7 @@ const handlepayment=async()=>{
             alert("Payment completed, but verification failed on the server.");
                     }
                 },
-                // theme: {
-                //     color: "#3399cc", 
-                //   },
+             
                 };
                 const raz=new (window as any).Razorpay(option);
                 raz.on('payment.failed', function (response: any) {
@@ -51,8 +49,8 @@ const handlepayment=async()=>{
 
 
   return (
-    <div>
-      <button onClick={handlepayment}>Pay</button>
+    <div className='paydiv' >
+      <button onClick={handlepayment} className='paybutton'>Pay</button>
     </div>
   )
 }
